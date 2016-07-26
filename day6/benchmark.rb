@@ -8,12 +8,18 @@ def recursion_add(n)
     end
 end
 
-puts recursion_add(0)
+def adding
+    arrays = 50.times.to_a
+    result = 0
+    arrays.each { |x| result += x }
+    result
+end
 
 Benchmark.bm do |x|
     x.report do
-
+        recursion_add(0)
+    end
+    x.report do
+        adding
     end
 end
-
-puts 50.times{|x| x+=x}
