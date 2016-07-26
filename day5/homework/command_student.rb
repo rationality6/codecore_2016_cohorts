@@ -68,5 +68,9 @@ class Sms
     end
 end
 
-codecore = Sms.new('Codecore')
-codecore.run
+if __FILE__ == $PROGRAM_NAME
+
+    codecore = Sms.new('Codecore')
+    codecore.run
+
+end
