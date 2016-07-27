@@ -11,26 +11,28 @@ class Bird < Animal
     end
 end
 
-class Cat < Animal
-    def initialize(name)
-        super(name)
-    end
-
-    def catching_bird(n)
-        birds = 0
-        n.times do
-            random_number = rand(2)
-            birds = Bird.new('Crows') if random_number == 1
-        end
-        birds
-    end
-end
-
 module HelperMethods
-    def random_number
+    def random_number_maker
         rand(2)
     end
 end
 
+class Cat < Animal
+    include HelperMethods
+
+    def initialize(name)
+        super(name)
+    end
+
+    def catching_birds(n)
+        birds = []
+        bird = Bird.new('Crows')
+        n.times do
+            birds << bird if random_number_maker == 1
+        end
+        birds.length
+    end
+end
+
 hume = Cat.new('Hume')
-puts hume.catching_bird(100)
+puts hume.catching_birds(100)
