@@ -1,21 +1,28 @@
-class Cat
+class Animal
+    attr_accessor :name
     def initialize(name)
         @name = name
-    end
-
-    def catching_bird(n)
-        catch_rate = 0
-        n.times do
-            random_number = rand(2)
-            catch_rate += 1 if random_number == 1
-        end
-        catch_rate
     end
 end
 
-class Bird
+class Bird < Animal
     def initialize(name)
-        @name = name
+        super(name)
+    end
+end
+
+class Cat < Animal
+    def initialize(name)
+        super(name)
+    end
+
+    def catching_bird(n)
+        birds = 0
+        n.times do
+            random_number = rand(2)
+            birds = Bird.new('Crows') if random_number == 1
+        end
+        birds
     end
 end
 

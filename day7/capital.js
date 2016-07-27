@@ -2,7 +2,7 @@ var capital = function(n) {
     console.log(`${n[0].toUpperCase()}${n.slice(1)}`);
 }
 
-// capital('hyun')
+capital('I like to play starcraft.')
 
 var capitalEven = function(n) {
     array = []
