@@ -13,6 +13,7 @@
     background-color: green;
 }
 body {
+    background: url(../img/pattern.jpg);
     background-color: lightblue;
     font-family: Arial;
     font-size: 50px;
@@ -21,7 +22,10 @@ form {
     background-color: green;
     font: 10em;
 }
-
 div p {
-  color: red;
+    color: red;
+}
+div {}
+img {
+    height: 150px
 }
