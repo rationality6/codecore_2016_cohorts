@@ -1,11 +1,13 @@
-// var array1 = [1, 2, 3];
-// var array2 = [3, 4, 5];
-//
-// var merge = function(x_array, y_array) {
-//     return x_array.concat(y_array);
-// }
+var array1 = [1, 2, 3];
+var array2 = [3, 4, 5];
 
-// a = merge(array1, array2)
+var merge = function(x_array, y_array) {
+    return x_array.concat(y_array);
+}
+
+
+a = merge(array1, array2)
+console.log(a);
 
 //
 // var deleting = function(array) {
@@ -21,15 +23,15 @@
 //
 // console.log(deleting(a));
 
-
-array = [5,6,6,3];
-var unique = array.filter(function(elem, index, self) {
-
-    console.log(elem);
-    console.log(index);
-    console.log(self);
-
-    return index == self.indexOf(elem);
-})
-
-console.log(unique)
+//
+// array = [5,6,6,3];
+// var unique = array.filter(function(elem, index, self) {
+//
+//     console.log(elem);
+//     console.log(index);
+//     console.log(self);
+//
+//     return index == self.indexOf(elem);
+// })
+//
+// console.log(unique)
