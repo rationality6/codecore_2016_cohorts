@@ -1,17 +1,16 @@
 var substring = function(string) {
     array = []
-    cutter = 0
+    string = string.replace(" ","");
     for (var i = 0; i <= string.length; i++) {
-        for (var j = 1; j <= string.length - cutter; j++) {
+        for (var j = 1; j <= string.length - i; j++) {
             a = string.substr(i, j)
             array.push(a)
         }
-        cutter += 1
     }
     return array
 }
 
-name_of = "dog"
+name_of = "dogk"
 
 console.log(substring(name_of));
 

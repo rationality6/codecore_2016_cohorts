@@ -1,0 +1,27 @@
+.main_head {
+    -webkit-columns: red;
+    -moz-columns: red;
+    -o-columns: red;
+    columns: red;
+    background-color: green;
+}
+#name {
+    -webkit-columns: red;
+    -moz-columns: red;
+    -o-columns: red;
+    columns: red;
+    background-color: green;
+}
+body {
+    background-color: lightblue;
+    font-family: Arial;
+    font-size: 50px;
+}
+form {
+    background-color: green;
+    font: 10em;
+}
+
+div p {
+  color: red;
+}
