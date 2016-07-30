@@ -10,6 +10,6 @@ puts sum(0)
 
 sum_result = 0
 for i in (1..50)
-    sum_result +=i
+    sum_result += i
 end
 puts sum_result
