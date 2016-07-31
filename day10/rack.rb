@@ -6,7 +6,7 @@ class MyApp
 
         req.params
         [200, { 'Content-Type' => 'text/html' },
-         ['Hello w3orld', '!!!']]
+         ['Hello world', '!!!']]
     end
 end
 
