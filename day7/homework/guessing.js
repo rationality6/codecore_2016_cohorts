@@ -1,4 +1,3 @@
-
 // var readline = require("readline");
 var guessing = function() {
     console.log(rand);
