@@ -13,7 +13,10 @@ var make_cards = function(card_symbols, card_numbers) {
     return decks
 }
 
-decks = make_cards(card_symbols, card_numbers)
+var randomDeck = function(decks) {
+    ran = Math.floor(Math.random() * decks.length);
+    return decks[ran]
+}
 
 function shuffle(array) {
     var currentIndex = array.length,
@@ -35,5 +38,8 @@ function shuffle(array) {
     return array;
 }
 
+decks = make_cards(card_symbols, card_numbers)
+    // console.log(randomDeck(decks));
 shuffled_decks = shuffle(decks)
-console.log(shuffled_decks);
+    // console.log(shuffled_decks);
+shuffle(decks);
