@@ -6,9 +6,6 @@ class Animal
 end
 
 class Bird < Animal
-    def initialize(name)
-        super(name)
-    end
 end
 
 module HelperMethods
@@ -19,10 +16,6 @@ end
 
 class Cat < Animal
     include HelperMethods
-
-    def initialize(name)
-        super(name)
-    end
 
     def catching_birds(n)
         birds = []

@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
     get '/messages' => 'messages#index'
     get '/messages/new' => 'messages#new'
+    post 'messages' => 'messages#create'
+
     get '/' => 'pages#index'
     get '/next' => 'pages#next'
-    post 'message' => 'messages#create'
 end
