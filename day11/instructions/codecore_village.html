@@ -1,12 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <title>CodeCore Village</title>
     <style>
+        @media{
+
+        }
         body {
+            margin-top:0px;
+            padding-top 0px:
             background-color: green;
+            padding: 50px;
             font-family: sans-serif;
             color: white;
             text-align: center;
@@ -15,13 +21,13 @@
         #codecore {
             background-color: red;
             width: 500px;
-            height: 600px;
+            height: 500px;
             position: absolute;
         }
 
         #sinatra {
             background-color: lightblue;
-            /*position: absolute;*/
+            position: relative;
         }
 
         #sql {
@@ -34,29 +40,59 @@
 
         div {
             padding: 50px;
-            margin: 25px
+            margin: 25px;
         }
 
         #me {
-            background-color;
-            color: pink;
+            background-color: pink;
+            /*position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 50px;*/
+        }
+
+        .footer {
+            padding: 5px;
+            margin: 5px;
+            background-color: gold;
+            height: 25px;
             position: fixed;
             top: 0px;
+            bottom: 0px;
             left: 0px;
-            width:100%
+            width: 100%;
+            z-index: 1;
         }
     </style>
-
 </head>
 
 <body>
+
+    <div class="nav">
+        Jacob's Company
+        <a href="#">Home</a> |
+        <a href="#">About</a> |
+        <a href="#">Projects</a> |
+        <a href="#">Contact</a>
+    </div>
+
     <div id="codecore">
         <h1>CodeCore Village</h1>
-        <div id='sinatra'>Sinatra - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus laborum iure voluptas! Sed, dignissimos nam illum aliquam nisi quas! Quae deserunt facilis dolore itaque iusto ullam
-            <span id='me'>Jacob</span>aut culpa aliquid assumenda.</div>
-        <div id='sql'>SQL</div>
-        <div id='rails'>Rails</div>
+        <div id="sinatra">Sinatra - Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis <span id="me">Jacob</span> exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+        <div id="sql">SQL</div>
+        <div id="rails">Rails</div>
     </div>
+
+    <div class="nav">
+        Jacob's Company
+        <a href="#">Home</a> |
+        <a href="#">About</a> |
+        <a href="#">Projects</a> |
+        <a href="#">Contact</a>
+    </div>
+
 </body>
 
 </html>
