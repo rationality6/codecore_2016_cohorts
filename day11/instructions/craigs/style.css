@@ -1,0 +1,30 @@
+div {
+  font-family: Arial;
+}
+/* div is optional, however, there is clarity if we do */
+/*div#box {
+
+}*/
+
+/* CMD + CTRL + SHIFT + 4 */
+.craigslist-box {
+  border: 1px grey solid;
+  width: 300px;
+  height: 300px;
+  border-radius: 5px;
+  display: inline-block;
+  box-shadow: 0 0 7px 0 #DDD;
+  margin: 10px;
+  padding: 5px 10px 15px 20px;
+  padding-top: 5px;
+}
+.craigslist-image {
+  max-height: 150px;
+  max-width: 150px;
+}
+.image-container {
+  text-align: center;
+}
+.inline {
+  display: inline;
+}

@@ -2,9 +2,7 @@ class TeamRand
     attr_accessor :team_array
 
     def initialize(array)
-        if array.length.odd?
-            puts "Odd number of member."
-        end
+        puts 'Odd number of member.' if array.length.odd?
         @team_array = array
     end
 
@@ -19,6 +17,6 @@ class TeamRand
     end
 end
 
-people = %w(Hyun Jen Ali Kim Moe Raff)
+people = %w(Hyun Jen Ali Kim Moe Raff John)
 team_rand = TeamRand.new(people)
-team_rand.randomize(3)
+team_rand.randomiz(4)

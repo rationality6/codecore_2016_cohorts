@@ -1,4 +1,4 @@
-var myString = "Your name is John Lennon";
+// var myString = "Your name is John Lennon";
 var myString = "awoeifjoiawefjaoweifjwoeifjoiwefjewaiofjaweofij awefoj awfeoij";
 
 var mostRecurring = function(text) {
