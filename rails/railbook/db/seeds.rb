@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+m1 = Message.create(content: "We're at the beach so you should meet us here! I make a mean sandcastle.")
+m2 = Message.create(content: 'Lets meet there!.')
+m3 = Message.create(content: 'hahahahaj.')
+m4 = Message.create(content: 'I love coding.')
+m5 = Message.create(content: 'This is so fun.')
+m6 = Message.create(content: 'blabla.')

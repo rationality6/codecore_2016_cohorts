@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-    get 'foo/show'
-
-    # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-    match ':controller(/:action(/:id))', via: [:get, :post, :patch]
+    get '/messages' => 'messages#index'
+    get '/messages/new' => 'messages#new'
+    get '/' => 'pages#index'
+    get '/next' => 'pages#next'
+    post 'message' => 'messages#create'
 end

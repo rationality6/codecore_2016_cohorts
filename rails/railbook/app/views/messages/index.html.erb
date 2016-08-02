@@ -1,0 +1,6 @@
+<% @messages.each do |message| %>
+<div class='message, container'>
+    <div><%= message.content%></div>
+    <p class='time'><%= message.created_at%></p>
+</div>
+<%end%>

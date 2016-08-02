@@ -8,10 +8,10 @@ class TeamRand
         @team_array = array
     end
 
-    def randomize
+    def randomiz(how_many)
         team_array_rand = team_array.shuffle
         team_count = 1
-        slice = team_array_rand.each_slice(2).to_a
+        slice = team_array_rand.each_slice(how_many).to_a
         for team in slice
             print "Team#{team_count}#{team} "
             team_count += 1
@@ -21,4 +21,4 @@ end
 
 people = %w(Hyun Jen Ali Kim Moe Raff)
 team_rand = TeamRand.new(people)
-team_rand.randomize
+team_rand.randomize(3)

@@ -25,4 +25,5 @@ class Beer < Nutrition
 end
 
 one_pizza = Pizza.new(2, 3, 3)
-one_pizza = Beer.new(2, 3, 3)
+p one_pizza = Beer.new(2, 3, 3)
+p one_pizza.volume

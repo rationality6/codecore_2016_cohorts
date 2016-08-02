@@ -7,6 +7,4 @@ class HelloController < ApplicationController
         @msg = 'Hello World..!'
         render 'hello/special'
     end
-
-
 end
