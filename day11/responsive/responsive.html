@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Make Responsive</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .page-wrap {
+            width: 800px;
+            margin: 20px auto;
+        }
+
+        .main-story {
+            position: relative;
+            margin: 0 0 25px 0;
+        }
+
+        img {
+            display: block;
+        }
+
+        a {
+            color: lightblue;
+        }
+
+        .story-intro {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.75);
+            padding: 20px;
+            color: white;
+        }
+
+        h1 {
+            font-size: 4em;
+        }
+
+        h1,
+        h2 {
+            margin: 0 0 10px 0;
+        }
+
+        .story-intro h1 {
+            font-size: 2.5em;
+        }
+
+        .story-intro p {
+            margin: 0;
+        }
+
+        .sub-stories {
+            overflow: hidden;
+            margin: 0 0 25px 0;
+        }
+
+        .sub-story {
+            float: left;
+            width: 250px;
+            margin-right: 25px;
+            position: relative;
+            font-size: 80%;
+        }
+
+        .last {
+            margin-right: 0;
+        }
+
+        @media(max-width:824px) {
+            section article.sub-story {
+                display: block;
+                width: 28.5%;
+            }
+            section article.sub-story img, .main-story img {
+                width: 100%;
+            }
+
+            .page-wrap {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-wrap">
+
+        <h1>Make This Responsive</h1>
+
+        <p>While maintaining the heirarchy of importance.</p>
+
+        <article class="main-story">
+
+            <img src="http://f.cl.ly/items/2e3c2a1Z0D1H3u0W2K12/shera.jpg" alt="Sha Ra Rocking" />
+
+            <div class="story-intro">
+                <h1>Most Important Story</h1> This article has the most visual weight. image">http://nebezial.deviantart.com/art/she-ra-115867096">image source.
+
+            </div>
+
+        </article>
+
+        <section class="sub-stories">
+
+            <article class="sub-story">
+                <img src="http://placekitten.com/250/350" />
+                <div class="story-intro">
+                    <h2>Less Important Story</h2>
+                    <p>This story has less visual weight.</p>
+                </div>
+            </article>
+
+            <article class="sub-story">
+                <img src="http://placecage.com/250/350" />
+                <div class="story-intro">
+                    <h2>Less Important Story</h2>
+                    <p>This story has less visual weight.</p>
+                </div>
+            </article>
+
+            <article class="sub-story last">
+                <img src="http://placebear.com/250/350" />
+                <div class="story-intro">
+                    <h2>Less Important Story</h2>
+                    <p>This story has less visual weight.</p>
+                </div>
+            </article>
+
+        </section>
+
+    </div>
+</body>
+
+</html>
