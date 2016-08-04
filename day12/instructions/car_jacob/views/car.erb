@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Car Age</title>
+  </head>
+  <body>
+    <img src="car.jpg" width="200px">
+    <br>
+    <label>Enter your car's age</label>
+    <form action="/" method="post">
+      <!-- <input type="text" name="age" value="<%= @age %>"> -->
+      <select  name="age">
+        <% for i in ((Date.today.year + 3).downto(1950)) %>
+        <option <%= i==@age ? "selected" : "" %>><%= i %></option>
+        <% end %>
+
+      </select>
+      <input type="submit" name="Check">
+    </form>
+    <input type ="textarea" name="response" value="<%= @result %>">
+  </body>
+</html>

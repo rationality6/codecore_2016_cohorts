@@ -11,7 +11,7 @@ class Fizzbuzz
         array_list =[]
         for i in 1..100
             if i % @first_number == 0 && i % @second_number == 0
-                array_list << "fizz"
+                array_list << "fizzbuzz"
             elsif i % @first_number == 0
                 array_list << "fizz"
             elsif i % @second_number == 0

@@ -1,0 +1,65 @@
+<form action="">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="input-group">
+                <input type="number" class="form-control" name='add_first'>
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">+</button>
+                </span>
+                <input type="number" class="form-control" name='add_second'>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <%= @add_result %>
+
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="input-group">
+                <input type="text" class="form-control" name='sub_first'>
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">-</button>
+                </span>
+                <input type="text" class="form-control" name='sub_second'>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <%= @sub_result %>
+
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="input-group">
+                <input type="text" class="form-control">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">%</button>
+                </span>
+                <input type="text" class="form-control">
+
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <%= @rest_result %>
+
+
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="input-group">
+                <input type="text" class="form-control" name='div'>
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">/</button>
+                </span>
+                <input type="text" class="form-control">
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <%= @div_result %>
+
+    <input type="submit">
+</form>

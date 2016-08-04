@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>faker</title>
+    </head>
+    <body>
+
+        <%="#{Faker::Pokemon.name} #{Faker::Pokemon.name}"%>
+
+        <select name="" id="">
+            <% 10.times do %>
+            <option value="">Canada</option>
+            <option value="">Korea</option>
+            <% end %>
+        </select>
+
+        <select name="" id="">
+            <% random = rand(3) %>
+            <% if random == 0 %>
+            <option value="">Canada</option>
+            <% else %>
+            <% end %>
+            <option value="">Korea</option>
+
+        </select>
+
+        <select name="" id="">
+            <% arr = ["Canada","USA","Mexico"] %>
+            <% arr.each do |country| %>
+            <option value=""><%=country%></option>
+            <%end%>
+        </select>
+    </body>
+</html>
