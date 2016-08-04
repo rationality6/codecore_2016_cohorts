@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Temperature conversion app</title>
+    </head>
+    <body>
+        <form action="" method="post">
+            <div>
+                <label for="temperature">Temperatur in &deg;C</label>
+                <input type="text" id="temperature" name="temperature">
+            </div>
+            <input type="submit" value="Submit">
+        </form>
+        <% if @temperature_in_f %>
+        The temperature in &deg;F is
+        <%= @temperature_in_f %>
+        <% end %>
+    </body>
+</html>
