@@ -17,6 +17,6 @@ class TeamRand
     end
 end
 
-people = %w(Hyun Jen Ali Kim Moe Raff John)
+people = %w(Hyun Jen Ali Berry Moe Raff John Ron)
 team_rand = TeamRand.new(people)
-team_rand.randomiz(4)
+team_rand.randomiz(2)

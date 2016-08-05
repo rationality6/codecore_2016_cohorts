@@ -13,11 +13,13 @@ post '/' do
 
     @result = if @age > 2016
                   'Future'
-              elsif @age > 2010
+              elsif @age > 2015
                   'New'
-              elsif @age > 2007
+              elsif @age > 2013
+                  'Used'
+              elsif @age > 2008
                   'Old'
-              else @age > 2005
+              else @age > 2007
                    'Junk'
               end
 

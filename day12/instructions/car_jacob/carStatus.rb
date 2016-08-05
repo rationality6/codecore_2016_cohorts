@@ -4,13 +4,21 @@ require 'sinatra/reloader'
 set :port, 9494
 
 get '/' do
-
-  erb(:car)
+    erb(:car)
 end
 
 post '/' do
-  @age = params[:age].to_i
-  @result = ''
-  @age>2016 ? @result = 'Future': @age>2006 ? @result = 'New' : @age > 1996 ? @result = 'Old' : @result = 'Very Old'
-  erb(:car)
+    @age = params[:age].to_i
+
+    @result = if @age > 2016
+                  'Future'
+              elsif @age > 2006
+                  'New'
+              elsif @age > 1996
+                  'Old'
+              else
+                  'Very Old'
+              end
+
+    erb(:car)
 end
