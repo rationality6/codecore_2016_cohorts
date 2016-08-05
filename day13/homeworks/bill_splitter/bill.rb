@@ -2,7 +2,7 @@ require 'sinatra'
 require 'sinatra/reloader'
 
 def bill_splitter(amount, tax, tip, people)
-    (amount + (tip * amount / 100 ) + (tax * amount / 100)) / people
+    (amount + (tip * amount / 100) + (tax * amount / 100)) / people
 end
 
 get '/' do

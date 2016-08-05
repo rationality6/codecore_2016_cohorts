@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Preferred Language</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class='container'>
+            <br>
+            <form method='post' action='/'>
+                <div class="form-group">
+                    <label for="Preferred Language">Preferred Language</label>
+                    <input type="text" class="form-control" placeholder="Name" name='name' value='<%=session[:name]%>'>
+                </div>
+                <select name='lang' multiple class="form-control">
+                    <option value='english'>English</option>
+                    <option value='french'>French</option>
+                    <option value='spanish'>Spanish</option>
+                    <option>Nothing</option>
+                </select>
+                <br>
+                <button type="summit" class="btn btn-primary">Submit</button>
+            </form>
+            <br>
+            <h2><%= session[:name_result] %></h2>
+        </div>
+    </body>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</html>
