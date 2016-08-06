@@ -1,0 +1,18 @@
+<h1>Calculator</h1>
+
+<form action="/" method='post'>
+    <input type="number" name='first_num' value='<%=session[:first]%>'>
+    <select name="operations" id="">
+        <% op_array = ['+','-','*','/'] %>
+        <% for i in op_array %>
+        <option value=<%= i %> <%= session[:operations] == i ? 'selected' : '' %>>
+            <%= i %>
+        </option>
+        <% end %>
+    </select>
+    <input type="number" name='second_num' value='<%= session[:second] %>'>
+
+    <button type='summit' class='btn btn-primary'>Do!</button>
+</form>
+
+<h2><%= session[:result] %></h2>
