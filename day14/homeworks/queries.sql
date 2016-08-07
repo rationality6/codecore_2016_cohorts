@@ -4,8 +4,9 @@ ORDER BY remaining_quantity * sale_price DESC
 limit 1;
 
 -- 2
-SELECT * FROM products
+select * from products
 where price > 25 and price < 50 and 0 < remaining_quantity
+order by price desc limit 1
 
 -- 3
 SELECT * FROM products
@@ -22,11 +23,11 @@ offset 10 limit 10
 SELECT avg(price) FROM products
 
 -- 6
-SELECT * FROM products
+select avg(price) from product
 where price > sale_price
 
 -- 7
-SELECT * FROM products
+SELECT avg(price) FROM products
 where price > sale_price and 0 < remaining_quantity
 
 -- 8
