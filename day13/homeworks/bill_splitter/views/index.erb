@@ -13,22 +13,22 @@
                 <h3>Amount</h3>
                 <div class="input-group">
                     <span class="input-group-addon" id="basic-addon1">$</span>
-                    <input type="number" class="form-control" placeholder="" aria-describedby="basic-addon1" name='amount'>
+                    <input type="number" class="form-control" placeholder="" aria-describedby="basic-addon1" name='amount' value='<%= session[:amount] %>'>
                 </div>
                 <h3>Tax</h3>
 
                 <div class="input-group">
                     <span class="input-group-addon" id="basic-addon1">%</span>
-                    <input type="number" class="form-control" placeholder="" aria-describedby="basic-addon1" name='tax'>
+                    <input type="number" class="form-control" placeholder="" aria-describedby="basic-addon1" name='tax' value='<%= session[:tax] %>'>
                 </div>
                 <h3>Tip</h3>
                 <div class="input-group">
                     <span class="input-group-addon" id="basic-addon1">%</span>
-                    <input type="number" class="form-control" placeholder="" aria-describedby="basic-addon1" name='tip'>
+                    <input type="number" class="form-control" placeholder="" aria-describedby="basic-addon1" name='tip' value='<%= session[:tip] %>'>
                 </div>
                 <h3>Number Of People</h3>
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="How many people" aria-describedby="basic-addon2" name='people'>
+                    <input type="number" class="form-control" placeholder="How many people" name='people' value="<%= session[:people] %>">
                     <span class="input-group-addon" id="basic-addon2">People</span>
                 </div>
                 <br>

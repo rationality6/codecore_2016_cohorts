@@ -1,0 +1,10 @@
+<h1>Todo list</h1>
+
+<%= session[:todos] %>
+
+<form action="/" method='post'>
+    <label for="Input">Input</label>
+    <input type="text" class="form-control" name='todo' placeholder="Todo">
+    <br>
+    <button class='btn btn-primary' type='summit'>Input.</button>
+</form>
