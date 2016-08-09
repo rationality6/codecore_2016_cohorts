@@ -1,3 +1,5 @@
+-- https://sql-lab.herokuapp.com/home
+
 -- 1- Select the first 10 students whose ages are between 35 and 45
 
 select * from students

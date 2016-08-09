@@ -1,3 +1,5 @@
+-- https://sql-lab.herokuapp.com/home
+
 -- 1- Create a product record with the following attributes: name: Premium Rustic Aluminum Gloves, description: Extra amazing gloves, price: 100, sale_price: 75, remaining_quantity: 40
 
 INSERT INTO students (name,description,price,sale_prices,remaining_quantity)

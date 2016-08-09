@@ -1,3 +1,5 @@
+-- https://sql-lab.herokuapp.com/home
+
 -- 1- Create a student record with the following attributes: first_name: John, last_name: Smith, Age: 45, email: john@smith.com registration_date: January 1st 2016, phone_number: 778.778.7787
 
 insert into student (first_name, last_name, Age, email, registration_date, phone_number)

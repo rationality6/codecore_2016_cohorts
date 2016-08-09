@@ -1,3 +1,5 @@
+-- https://sql-lab.herokuapp.com/home
+
 -- 1- Select the product whose stock has the most value (use sale price)
 
 SELECT * FROM products

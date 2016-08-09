@@ -1,3 +1,5 @@
+-- https://sql-lab.herokuapp.com/home
+
 -- 1- Find the number of students named 'Milton'.
 
 select count(*)
