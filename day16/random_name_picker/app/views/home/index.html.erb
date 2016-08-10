@@ -1,8 +1,8 @@
-<%= form_tag '/' do %>
+<%= form_tag foo_path do %>
 <div>
     <%= label_tag :Random, nil, class:'baz' %>
     <br>
-    <%= text_area_tag :names,nil,class:'foo' %>
+    <%= text_area_tag :names,defalut=params[:names],class:'foo' %>
 </div>
 <%= submit_tag "Pick" %>
 <% end %>
