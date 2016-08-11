@@ -4,7 +4,11 @@ class Product < ApplicationRecord
     validates :description, presence: true, length: { minimum: 10 }
 
     def self.search(s)
-        where(['title ILIKE ? OR description ILIKE ?', "%#{s}%","%#{s}%"])
+        where(['title ILIKE ? OR description ILIKE ?', "%#{s}%", "%#{s}%"])
+    end
+
+    def self.search1(keyword)
+        (where(['title ILIKE ?', "%#{keyword}%"]).order(title: :desc) + where(['description ILIKE ?', "%#{keyword}%"]).order(description: :asc)).uniq
     end
 
     after_initialize :default_price
@@ -18,7 +22,6 @@ class Product < ApplicationRecord
     end
 
     def capitalize
-        self.title.capitalize! if title
+        title.capitalize! if title
     end
-
 end

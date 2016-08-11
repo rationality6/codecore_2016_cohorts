@@ -1,0 +1,15 @@
+<h1>Questions#new</h1>
+<p>Find me in app/views/questions/new.html.erb</p>
+
+<%= form_for @question do |f| %>
+<div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+</div>
+<div>
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+</div>
+<%= f.submit %>
+
+<% end %>
