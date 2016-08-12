@@ -1,0 +1,7 @@
+<div class="">
+    <%= @product.name %>
+    <%= @product.price %>
+    <br>
+    <%= link_to "Edit", edit_product_path(@product) %>
+    <%= link_to "Delete", product_path(@product), method: :delete%>
+</div>

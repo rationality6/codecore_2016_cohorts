@@ -10,26 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160811215138) do
-
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-  create_table "products", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.float    "price"
-  end
+ActiveRecord::Schema.define(version: 20160811200945) do
 
   create_table "questions", force: :cascade do |t|
     t.string   "title"
     t.text     "body"
-    t.integer  "view_count"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["body"], name: "index_questions_on_body", using: :btree
-    t.index ["title"], name: "index_questions_on_title", using: :btree
   end
 
 end
