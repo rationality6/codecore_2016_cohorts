@@ -9,18 +9,15 @@
     </head>
 
     <body>
-
         <%= link_to("Home", root_path, {class: "abc"}) %>
-        <!-- <a href="<%= root_path %>">Home</a> -->
-        |
-        <%= link_to "About", about_us_path %>
-        <!-- <a href="/about">About</a> -->
-        |
-        <%= link_to "Contact Us", new_contact_path %>
         |
         <%= link_to "New Question", new_question_path %>
         |
         <%= link_to "Questions", questions_path %>
+        |
+        <%= link_to "New Products",new_product_path %>
+        |
+        <%= link_to("Products",products_path) %>
         <hr>
         <%= yield %>
     </body>

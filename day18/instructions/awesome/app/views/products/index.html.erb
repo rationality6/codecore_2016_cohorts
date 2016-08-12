@@ -1,11 +1,13 @@
-<h1>Product#index</h1>
-<p>Find me in app/views/product/index.html.erb</p>
-<h1>All Questions</h1>
+<% get_page(@products, @page).each do |prod| %>
+<%= link_to prod.name, product_path(prod) %>
+<br>
+<% end %>
 
-<% @product.each do |i| %>
+<p>
+    Page:
+    <%= @page %>
+</p>
 
-<%= link_to i.name, product_path(i) %>
-<%= i.price %>
-<hr>
-
+<% get_num_pages(@products).times do |n| %>
+<%= link_to "#{n }", products_page_path(:page => "#{n}") %>
 <% end %>
