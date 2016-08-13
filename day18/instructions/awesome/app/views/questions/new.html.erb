@@ -1,15 +1,15 @@
-<h1>Questions#new</h1>
-<p>Find me in app/views/questions/new.html.erb</p>
+<h1>New Question</h1>
 
-<%= form_for @question do |f| %>
-<div>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-</div>
-<div>
-    <%= f.label :body %>
-    <%= f.text_area :body %>
-</div>
-<%= f.submit %>
 
-<% end %>
+
+<%# this will look for a partial names `_form.html.erb` within the same folder
+    as this file.
+    If you want to render the partial from another folder you can use the full
+    path (with in the views folder) such as: render "/questions/form"
+    Partials have access to the instance variables available in the template. So
+    In this case @question will be available in _form.html.erb.
+    If you want to pass a local variable to the partial then you can do:
+    = render "form", abc: "Hello"
+    Then you will have a variable named `abc` available in `_form` with value "Hello"
+    %>
+<%= render "form" %>

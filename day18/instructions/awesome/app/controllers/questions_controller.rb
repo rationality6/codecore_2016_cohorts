@@ -1,46 +1,85 @@
 class QuestionsController < ApplicationController
-    def new
-        @question = Question.new
-    end
+  # before_action takes in an arguement for a method (ideally private) that gets
+  # executed just before the action and it's still within the request/response
+  # cycle
+  # before_action :find_question, except: [:create, :new, :index]
+  before_action :find_question, only: [:show, :edit, :update, :destroy]
 
-    def create
-        question_params = params.require(:question).permit([:title, :body])
-        @question = Question.new question_params
-        if @question.save
-            # render json: params
-            redirect_to question_path(@question)
-            # redirect_to @question
-        else
-            render :new
-        end
+  QUESTIONS_PER_PAGE = 10
+  # GET /questions/new
+  def new
 
-        # render json: params
-    end
+    # we need to instantiate a new Question object because it will help us build
+    # a form to create a question easily
+    # @question = Question.new title: "abc"
+    @question = Question.new
 
-    def show
-        @question = Question.find(params[:id])
-    end
+    # render :new
+    # render "/questions/new"
+  end
 
-    def index
-        @questions = Question.order(created_at: :desc)
-    end
+  def create
+    # {
+    #   "utf8": "â",
+    #   "authenticity_token": "...",
+    #   "question": {
+    #     "title": "asd fasdff",
+    #     "body": "asdf asd f"
+    #   },
+    #   "commit": "Create Question",
+    #   "controller": "questions",
+    #   "action": "create"
+    # }
+    flash[:notice] = "Question created succ"
 
-    def edit
-        @question = Question.find(params[:id])
-    end
+    # we're using the `strong parameters` feature of Rails here to only allow
+    # mass-assigning the attributes that we want to allow the user to set
+    question_params  = params.require(:question).permit([:title, :body])
+    @question        = Question.new question_params
 
-    def update
-        @question = Question.find(params[:id])
-        if @question.update params.require(:question).permit([:title, :body])
-            redirect_to question_path(@question)
-        else
-            render :edit
-        end
-    end
+    if @question.save
+      # render :show
 
-    def destroy
-        question = Question.find(params[:id])
-        question.destroy
-        redirect_to questions_path
+      # all the methods below will work to redirect the user:
+      # redirect_to question_path({id: @question.id})
+      # redirect_to question_path({id: @question})
+      redirect_to question_path(@question)
+      # redirect_to @question
+    else
+        flash[:alert] = "Please fix errors below before "
+      render :new
     end
+  end
+
+  def show
+  end
+
+  def index
+    @questions = Question.order(created_at: :desc)
+    .page(params[:page]).
+    per(QUESTIONS_PER_PAGE)
+  end
+
+  def edit
+  end
+
+  def update
+    if @question.update params.require(:question).permit([:title, :body])
+      redirect_to question_path(@question)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @question.destroy
+    redirect_to questions_path
+  end
+
+  private
+
+  def find_question
+    @question = Question.find params[:id]
+  end
+
 end

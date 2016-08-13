@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+    before_action :find_question, only: [:show, :edit, :update, :destroy]
+
     def index
         @products = Product.order(created_at: :desc)
         @page = params[:page] || 0
@@ -39,5 +41,9 @@ class ProductsController < ApplicationController
         else
             render :edit
         end
+    end
+
+    def question_params
+        params.require(:question).permit()
     end
 end

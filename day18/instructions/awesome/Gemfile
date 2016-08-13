@@ -46,6 +46,7 @@ group :development do
   gem 'interactive_editor'
   gem 'hirb'
   gem 'faker'
+  gem 'kaminari'
 
 
 end

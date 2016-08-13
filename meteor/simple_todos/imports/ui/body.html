@@ -1,20 +1,20 @@
 <body>
-    <div class="container">
-        <header>
-            <h1>Todo List</h1>
-        </header>
-    </div>
+  <div class="container">
+    <header>
+      <h1>Todo List</h1>
+      <form class="new-task">
+        <input type="text" name="text" placeholder="Type to add new tasks" />
+      </form>
+    </header>
 
     <ul>
-        {{#each tasks}}
-            {{> task}}
-        {{/each}}
+      {{#each tasks}}
+        {{> task}}
+      {{/each}}
     </ul>
-
-  {{> hello}}
-  {{> info}}
+  </div>
 </body>
 
-<template name='task'>
+<template name="task">
   <li>{{text}}</li>
 </template>
