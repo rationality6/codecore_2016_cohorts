@@ -7,6 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-200.times do
-    Product.create({title:"fooawef",price:rand(100),description:'fooboo'});
+50.times do
+    Product.create({title:Faker::App.name,price:rand(100),description:Faker::Hacker.say_something_smart});
 end

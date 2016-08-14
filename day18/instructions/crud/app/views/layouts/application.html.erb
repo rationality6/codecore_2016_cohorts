@@ -9,6 +9,11 @@
   </head>
 
   <body>
+    <%= link_to "Home", root_path %>
+    |
+    <%= link_to "New", new_question_path %>
+    |
+    <hr>
     <%= yield %>
   </body>
 </html>
