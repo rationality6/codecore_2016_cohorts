@@ -6,6 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# 50.times do
+#   Question.create(title: Faker::Pokemon.name, body: Faker::Pokemon.location)
+# end
+
 50.times do
-  Question.create(title: Faker::Pokemon.name, body: Faker::Pokemon.location)
+  Book.create(title: Faker::Pokemon.name, author: Faker::Pokemon.location, price: rand(50) + 50, length: rand(100) + 200)
 end

@@ -1,12 +1,10 @@
 <%= @question.errors.full_messages.join(", ") %>
-<%= form_for @question do |f|%>
+<%= bootstrap_form_for @question do |f|%>
 <div id="name">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+  <%= f.text_field :title %>
 </div>
 <div id="name">
-    <%= f.label :body %>
-    <%= f.text_area :body %>
+  <%= f.text_area :body %>
 </div>
 <%= f.submit %>
 <% end %>

@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   # delete "/questions/:id" => "questions#destroy"
 
   resources :questions
+  resources :books
 end

@@ -1,8 +1,10 @@
 <% @questions.each do |question| %>
 <div id="name">
-    <%= link_to(question.title, question_path(question)) %>
-    |
-    <%= question.body %>
-    <hr>
+  <%= link_to(question.title, question_path(question)) %>
+  |
+  <%= question.body %>
+  |
+  <%= link_to("Delete", question_path(question), method: :delete)  %>
+  <hr>
 </div>
 <% end %>
