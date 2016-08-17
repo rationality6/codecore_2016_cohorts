@@ -1,0 +1,8 @@
+<%= @book.errors.full_messages.join(", ") %>
+<%= bootstrap_form_for @book do |f| %>
+<%= f.text_field :title %>
+<%= f.text_field :author %>
+<%= f.number_field :price %>
+<%= f.number_field :length %>
+<%= f.submit %>
+<% end %>

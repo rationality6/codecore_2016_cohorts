@@ -1,0 +1,9 @@
+<h2>Random_picker</h2>
+<br>
+<form action="/" method='post'>
+    <textarea name='names' class="form-control" rows="3"><%= session[:names] %></textarea>
+    <br>
+    <button type='summit' class="btn btn-primary">Pick</button>
+</form>
+
+<h2><%= "The Winner is #{session[:winner]}" %></h2>
