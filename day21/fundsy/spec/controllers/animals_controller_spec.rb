@@ -83,8 +83,12 @@ RSpec.describe AnimalsController, type: :controller do
       end
 
       it "defines an instance variable for all campaigns" do
-
+        animal = Animal.create title:"foobar"
+        animal1 = Animal.create title:"foobar"
+        get :index
+        # expect(assigns(:))
       end
+
     end
   end
 end
