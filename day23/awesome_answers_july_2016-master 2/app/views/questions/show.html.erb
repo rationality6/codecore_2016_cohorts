@@ -1,0 +1,30 @@
+<h1><%= @question.title %></h1>
+<p>
+  <%= @question.body %>
+</p>
+<%= link_to "Edit", edit_question_path(@question) %>
+<%= link_to "Delete", question_path(@question),
+                      method: :delete,
+                      data: {confirm: "Are you sure?"} %>
+
+
+<%#= @review.errors.full_messages.join(", ") %>
+<%= form_for [@question,@review] do |f| %>
+<div id="">
+  <%= f.text_area :body %>
+</div>
+<div id="">
+  <%= f.text_area :star_count %>
+</div>
+<%= f.submit %>
+<% end %>
+
+<% @question.reviews.each do |ans| %>
+<%= link_to "Delete", question_review_path(@question,ans),
+method: :delete,
+data: {confirm:"Are you sure?"}
+ %>
+ <%= ans.body %>
+ <%= ans.star_count %>
+ <hr>
+ <% end %>

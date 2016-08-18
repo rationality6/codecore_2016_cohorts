@@ -1,0 +1,14 @@
+<%= form_for [@product,@review] do |f| %>
+<div>
+  <%= f.text_area :body %>
+</div>
+<%= f.submit %>
+<% end %>
+
+<% @product.reviews.each do |i|%>
+<div id="name">
+  <%= i.body %>
+  <%= link_to "del", product_review_path(@product,i),
+  method: :delete %>
+</div>
+<% end %>

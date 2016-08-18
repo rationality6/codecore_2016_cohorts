@@ -1,0 +1,31 @@
+<h1><%= @question.title %></h1>
+<p>
+  <%= @question.body %>
+</p>
+<%= link_to "Edit", edit_question_path(@question) %>
+<%= link_to "Delete", question_path(@question),
+                      method: :delete,
+                      data: {confirm: "Are you sure?"} %>
+<hr>
+
+<h2>Create an Answer</h2>
+
+<%#= form_for @answer, url: question_answers_path(@question) do |f| %>
+
+<%= @answer.errors.full_messages.join(", ") %>
+<%= form_for [@question, @answer] do |f| %>
+<div>
+  <%= f.text_area :body %>
+</div>
+<%= f.submit %>
+<% end %>
+
+<h2>Answers</h2>
+<% @question.answers.each do |ans| %>
+<%= link_to "Delete", question_answer_path(@question, ans),
+method: :delete,
+data: {confirm: "Are you sure?"}
+ %>
+<%= ans.body %>
+<hr>
+<% end %>
