@@ -7,4 +7,10 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @review = Review.new
   end
+
+  def destroy
+    pro = Product.find params[:id]
+    pro.destroy
+  end
+
 end

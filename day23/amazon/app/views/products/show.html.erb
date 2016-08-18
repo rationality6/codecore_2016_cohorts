@@ -1,3 +1,6 @@
+<%= "This is the created product #{@product.category}" %>
+<%= "This is the created product #{@product.name}" %>
+
 <%= form_for [@product,@review] do |f| %>
 <div>
   <%= f.text_area :body %>
