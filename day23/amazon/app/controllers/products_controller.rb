@@ -13,4 +13,16 @@ class ProductsController < ApplicationController
     pro.destroy
   end
 
+  def new
+    @product = Product.new
+  end
+
+  def create
+    pra = params.require(:product).permit(:category_is, :title, :description, :goal)
+    @product = Product.new(pra)
+
+    if @product.save
+      redirect_to product_path(@product)
+    end
+  end
 end

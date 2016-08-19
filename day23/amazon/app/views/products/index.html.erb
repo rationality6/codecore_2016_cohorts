@@ -1,8 +1,10 @@
+
 <% @products.each do |p| %>
 <div>
   <h2>
     <%= link_to p.name, product_path(p) %>
     <%= p.price %>
   </h2>
+  <%#= link_to "del",,method: :delete %>
 </div>
 <% end %>
