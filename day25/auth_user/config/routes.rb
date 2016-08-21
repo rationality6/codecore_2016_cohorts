@@ -3,4 +3,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
   resources :users, only: [:new, :create]
   resources :welcome, only: [:index]
+  # resources :sessions, only: [:new, :create]do
+  #   delete :destroy, on :collection
+  # end
 end

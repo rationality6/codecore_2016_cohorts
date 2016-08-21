@@ -9,9 +9,16 @@
   </head>
 
   <body>
+    <%= link_to "Home", root_path %>
+    |
+    <%= link_to "Sign up", new_user_path %>
+    |
     <% if user_signed_in? %>
     Welcome
+    <% else %>
+    <%= link_to "Log in", new_session_path %>
     <% end %>
+
     <%= yield %>
   </body>
 </html>
