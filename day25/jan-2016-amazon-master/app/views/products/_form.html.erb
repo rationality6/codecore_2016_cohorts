@@ -1,0 +1,24 @@
+<%#= @product.errors.full_messages.join(", ") %>
+<ul>
+  <% @product.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+</ul>
+<%= form_for @product do |f|  %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+  <div>
+    <%= f.label :price %>
+    <%= f.text_field :price %>
+  </div>
+  <div>
+    <%= f.collection_check_boxes :department_ids, Department.order(:name), :id, :name%>
+  </div>
+  <%= f.submit %>
+<% end %>

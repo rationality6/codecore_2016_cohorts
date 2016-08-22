@@ -11,11 +11,19 @@
   <body>
     <%= link_to "Home", root_path %>
     |
+    <%= link_to "Posts",posts_path %>
+    |
     <%= link_to "Sign up", new_user_path %>
     |
     <% if user_signed_in? %>
-    Welcome
-    <% else %>
+    |
+    <%= link_to "Logout", sessions_path, method: :delete %>
+    |
+    <%= link_to "Update", edit_user_path(current_user)  %>
+    | Welcome
+    <%= current_user.full_name %>
+
+  <% else %>
     <%= link_to "Log in", new_session_path %>
     <% end %>
 
