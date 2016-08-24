@@ -4,7 +4,8 @@ class QuestionsController < ApplicationController
   # cycle
   # before_action :find_question, except: [:create, :new, :index]
   before_action :find_question, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:create, :edit, :destroy, :update, :new]
+  before_action :authenticate_user, only: [:create, :edit, :destroy, :update, :new]
+  before_action :authorize, only: [:destroy, :update, :edit]
 
   QUESTIONS_PER_PAGE = 10
 
@@ -88,5 +89,9 @@ class QuestionsController < ApplicationController
     # we're using the `strong parameters` feature of Rails here to only allow
     # mass-assigning the attributes that we want to allow the user to set
     params.require(:question).permit([:title, :body])
+  end
+
+  def authorize
+    redirect_to root_path, alert: 'access defined' unless @question.user == current_user
   end
 end
