@@ -1,4 +1,5 @@
 var square = new Object();
+
 square.sideLength = 6;
 
 square.calcPerimeter = function() {
