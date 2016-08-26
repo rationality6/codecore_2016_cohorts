@@ -19,3 +19,10 @@ $('a').on('click',function(event){
 $('.shape').on('click',function(event){
   console.log('shape was clicked!');
 })
+
+$('#orange-container').append('<div class="shape blue small circle"></div>');
+$('#orange-container').append("<div class='shape red medium'></div>");
+
+$('#orange-container').on('click','.red',function(event){
+  $(event.target).remove()
+})

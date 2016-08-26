@@ -6,7 +6,10 @@ $('input:text').on('keyup',function(event){
 
 var $formMessage = $('#form-message');
 
-$('input').on
+$('input').on('keyup',function(event){
+  var $input = $(event.target);
+  $formMessage.html($input)
+})
 
 $('input:text').on('keyup',function(event){
   var $input = $(event.target);
