@@ -5,3 +5,6 @@ for (var i = 0, len = document.links.length; i < len; i++) {
 for (var i = 0, len = $('a').length; i < len; i++) {
   $('a')[i].style.color = 'red';
 }
+
+var random = Math.floor(Math.random()*12);
+console.log(random);
