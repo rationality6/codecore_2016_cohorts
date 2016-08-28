@@ -1,11 +1,14 @@
 <div class="messages">
-    <div class="container">
-        <% @messages.each do |message| %>
-        <div class="message">
-            <p class="content"><%= message.content %></p>
-            <p class="time"><%= message.created_at %></p>
-        </div>
-        <% end %>
+  <div class="container">
+    <% @messages.each do |message| %>
+    <div class="message">
+      <p class="content">
+        <%= link_to message.content,message_path(message) %>
+      </p>
+      <p class="time"><%= message.created_at %></p>
+      <%= link_to "Delete", message_path(message),method: :delete %>
     </div>
+    <% end %>
+  </div>
 </div>
 <%= link_to 'New Message', "messages/new" %>

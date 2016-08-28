@@ -73,6 +73,7 @@ class QuestionsController < ApplicationController
   end
 
   def question_params
+
     # {
     #   "utf8": "✓",
     #   "authenticity_token": "...",

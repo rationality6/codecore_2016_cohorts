@@ -1,0 +1,6 @@
+<%= @message.content %>
+<%= @message.created_at %>
+<%#= link_to "Delete", delete_message(@message) ,method: :delete %>
+<%= link_to "Delete", message_path(@message),
+                        method: :delete,
+                        data: {confirm: "Are you sure?"} %>
