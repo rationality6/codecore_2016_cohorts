@@ -1,6 +1,27 @@
-<%= @message.content %>
-<%= @message.created_at %>
-<%#= link_to "Delete", delete_message(@message) ,method: :delete %>
-<%= link_to "Delete", message_path(@message),
+<div>
+  <%= @message.content %>
+  <%= @message.created_at %>
+</div>
+<div>
+  <%= link_to "Update", edit_message_path(@message) %>
+
+  <%= link_to "Delete", message_path(@message),
                         method: :delete,
                         data: {confirm: "Are you sure?"} %>
+</div>
+
+<%= form_for [@message,@comments] do |f| %>
+<div>
+  <%= f.text_area :body %>
+  <%= f.submit %>
+</div>
+<% end %>
+
+<% @message.comments.each do |c| %>
+<div>
+  <%= c.body %>
+  <%= link_to "Del", message_comment_path(@message,c),
+  method: :delete,
+  data: {confirm: "Are you sure?"}%>
+</div>
+<% end %>

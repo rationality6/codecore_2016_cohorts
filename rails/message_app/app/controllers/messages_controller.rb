@@ -1,15 +1,27 @@
 class MessagesController < ApplicationController
-  before_action :find_message, only: [:destroy, :show]
+  before_action :find_message, only: [:destroy, :show, :edit, :update]
 
   def index
     @messages = Message.all
   end
 
   def show
+    @comments = Comment.new
   end
 
   def new
     @message = Message.new
+  end
+
+  def edit
+  end
+
+  def update
+    if @message.update(message_params)
+      redirect_to message_path(@message)
+    else
+      render :edit
+    end
   end
 
   def create
@@ -23,7 +35,6 @@ class MessagesController < ApplicationController
 
   def destroy
     @message.destroy
-    byebug
     redirect_to root_path
   end
 
