@@ -1,8 +1,9 @@
 class CommentsController < ApplicationController
 
+  # before_action :
+
   def show
     @comment = Comment.find params[:message_id]
-    byebug
   end
 
   def create
