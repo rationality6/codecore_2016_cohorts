@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   root 'messages#index'
 
   resources :messages do
-    resources :comments, only: [:create, :destroy, :show]
+    resources :comments, only: [:create, :destroy, :show, :edit, :update]
+    # resources :feedbacks
   end
 
   # get '/messages/new' => 'messages#new', as: :new_message

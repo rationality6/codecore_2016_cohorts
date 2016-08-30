@@ -1,9 +1,21 @@
 class CommentsController < ApplicationController
-
-  # before_action :
+  before_action :find_comments, only: [:edit, :show]
 
   def show
-    @comment = Comment.find params[:message_id]
+  end
+
+  def edit
+    @message = Message.find params[:id]
+  end
+
+  def update
+    @message = Message.find params[:id]
+    byebug
+    if @comments.update(comment_params)
+      redirect_to message_path(:message_id)
+    else
+      render :edit
+    end
   end
 
   def create
@@ -33,6 +45,10 @@ class CommentsController < ApplicationController
   end
 
   private
+
+  def find_comments
+    @comments = Comment.find params[:message_id]
+  end
 
   def comment_params
     params.require(:comment).permit(:body)

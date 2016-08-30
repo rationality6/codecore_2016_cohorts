@@ -43,6 +43,10 @@ Rails.application.routes.draw do
   # patch "/questions/:id" => "questions#update"
   # delete "/questions/:id" => "questions#destroy"
 
+  match "/delayed_job" => DelayedJobWeb, :anchor => false, via: [:get, :post]
+
+
+
   # This is basically defining: get "/"
   root 'welcome#index'
 end

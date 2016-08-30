@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,IAAK;EACD,KAAK,EAAE,GAAG;EACV,WAAW,EAAE,IAAI;EAEjB,SAAK;IACD,cAAc,EAAE,SAAS",
+"sources": ["style.scss"],
+"names": [],
+"file": "jacob.css"
+}

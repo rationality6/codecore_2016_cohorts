@@ -10,16 +10,14 @@
                         data: {confirm: "Are you sure?"} %>
 </div>
 
-<%= form_for [@message,@comments] do |f| %>
-<div>
-  <%= f.text_area :body %>
-  <%= f.submit %>
-</div>
-<% end %>
+<%= render 'message',comment: @comments,message: @message %>
 
 <% @message.comments.each do |c| %>
 <div>
   <%= link_to c.body, message_comment_path(c) %>
+
+  <%= link_to "Edit", edit_message_comment_path(c) %>
+
   <%= link_to "Del", message_comment_path(@message,c),
   method: :delete,
   data: {confirm: "Are you sure?"}%>

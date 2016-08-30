@@ -33,7 +33,8 @@ end
 
 max = Dog.new('black', 'chiwawa')
 max.give
-max.give
+max
+.give
 max.give
 max.give
 max.eat

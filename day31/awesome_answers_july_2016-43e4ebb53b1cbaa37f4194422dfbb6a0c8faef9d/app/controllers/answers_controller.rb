@@ -1,5 +1,4 @@
 class AnswersController < ApplicationController
-
   def create
     # we instantiate a new answer object based on the params we got from the
     # user. We use: params.require(:answer).permit(:body) as it's required part
@@ -19,19 +18,26 @@ class AnswersController < ApplicationController
 
     # we same the answer to the database
     if @answer.save
+      AnswerMailer.notify_question_owner(@answer).deliver_later
       # we redirect to the question show page
-      redirect_to question_path(@question), notice: "Answer created!"
+      redirect_to question_path(@question), notice: 'Answer created!'
     else
-      flash[:alert] = "Please fix errors below"
-      render "/questions/show"
+      flash[:alert] = 'Please fix errors below'
+      render '/questions/show'
     end
   end
-
 
   def destroy
     q = Question.find params[:question_id]
     a = Answer.find params[:id]
     a.destroy
-    redirect_to question_path(q), notice: "Answer deleted"
+    redirect_to question_path(q), notice: 'Answer deleted'
   end
+
+  private
+
+  def user_vote
+    @user_vote ||= @question.vote_for current_user
+  end
+  helper_method :user_vote
 end

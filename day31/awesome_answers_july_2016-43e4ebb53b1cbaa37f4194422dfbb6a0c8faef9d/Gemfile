@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+gem 'delayed_job_active_record'
+gem 'delayed_job_web'
+
+gem "sinatra", "2.0.0.beta2"
 gem 'chosen-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0'
@@ -56,6 +60,7 @@ group :development do
   gem "interactive_editor"
   gem "hirb"
   gem 'rails-erd'
+  gem 'letter_opener'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
