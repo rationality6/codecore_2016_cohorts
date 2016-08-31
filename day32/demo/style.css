@@ -1,7 +1,40 @@
-.new {
-    color: red;
+.awesome {
+  background-color: grey;
 }
 
-.new span {
-    font-size: 25px;
+ul li {
+  background-color: pink;
+  background-color: blue;
+  background-color: grey;
 }
+
+.first-li {
+  background-color: red;
+  color: green;
+}
+
+.second-li {
+  background-color: blue;
+  color: orange;
+}
+
+.third-li {
+  background-color: yellow;
+  color: purple;
+}
+
+.new {
+  color: red;
+  width: 100%;
+  width: 100%;
+}
+.new span {
+  font-size: 25px;
+  width: 100% / 2;
+}
+
+.ela {
+  color: pink;
+}
+
+/*# sourceMappingURL=style.css.map */

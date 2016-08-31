@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAAA,IAAK;EACD,KAAK,EAAE,GAAG;EACV,WAAW,EAAE,IAAI;EAEjB,SAAK;IACD,cAAc,EAAE,SAAS",
+"mappings": "AAAA,IAAK,CACD,KAAK,CAAE,GAAG,CACV,WAAW,CAAE,IAAI,CAEjB,SAAK,CACD,cAAc,CAAE,SAAS",
 "sources": ["style.scss"],
 "names": [],
 "file": "jacob.css"

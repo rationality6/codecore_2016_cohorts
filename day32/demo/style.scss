@@ -1,8 +1,45 @@
-.new {
-    color: red;
-    font-weight: bold;
+$tam: awesome;
+$property: background-color;
+$color: pink blue grey;
 
-    span {
-        text-transform: uppercase;
+.#{$tam} {
+  @if ($tam == awesome) {
+    #{$property}: nth($color, 3);
+  }
+}
+
+ul {
+  li {
+    // @for $i from 1 to 3 { // first 2
+    @for $i from 1 through 3 { // all 3
+      background-color: nth($color, $i);
     }
+  }
+}
+
+$background-colors: red blue yellow;
+$font-colors: green orange purple;
+$classes: first-li second-li third-li;
+
+@for $i from 1 through 3 {
+  .#{nth($classes, $i)} {
+    background-color: #{nth($background-colors, $i)};
+    color: #{nth($font-colors,$i)};
+  }
+}
+
+
+.new {
+  color: red;
+  width: 100%; // does the same as below
+  width: percentage(1); // 100%
+
+  span {
+    font-size: 25px;
+    width: 100% / 2;
+  }
+}
+
+.ela {
+  color: pink;
 }

@@ -1,1 +1,13 @@
-<%= @comments.body %>
+<%= @comment.body %>
+
+<div>
+  <%#= link_to 'Edit', edit_message_comment_path(@message,params[:id]) %>
+  <%= link_to "Edit", edit_message_comment_path(@message,@comment) %>
+</div>
+<div>
+  <%= link_to "Del", message_comment_path(@message,@comment),
+  method: :delete %>
+</div>
+<div>
+  <%= link_to 'Back', message_path(params[:message_id]) %>
+</div>

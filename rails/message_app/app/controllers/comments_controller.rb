@@ -1,18 +1,20 @@
 class CommentsController < ApplicationController
-  before_action :find_comments, only: [:edit, :show]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :find_comments, only: [:edit, :show, :update]
 
   def show
+    @message = Message.find params[:message_id]
   end
 
   def edit
-    @message = Message.find params[:id]
+    @message = Message.find params[:message_id]
   end
 
   def update
-    @message = Message.find params[:id]
-    byebug
-    if @comments.update(comment_params)
-      redirect_to message_path(:message_id)
+    @comment = Comment.find params[:id]
+    @message = Message.find params[:message_id]
+    if @comment.update(comment_params)
+      redirect_to message_path(@message)
     else
       render :edit
     end
@@ -47,7 +49,7 @@ class CommentsController < ApplicationController
   private
 
   def find_comments
-    @comments = Comment.find params[:message_id]
+    @comment = Comment.find params[:id]
   end
 
   def comment_params

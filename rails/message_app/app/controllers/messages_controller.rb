@@ -1,4 +1,5 @@
 class MessagesController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :find_message, only: [:destroy, :show, :edit, :update]
 
   def index
@@ -26,6 +27,7 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.new(message_params)
+    @message.user = current_user
     if @message.save
       redirect_to '/'
     else
