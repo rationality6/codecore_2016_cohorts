@@ -1,6 +1,5 @@
 class VotesController < ApplicationController
   before_action :authenticate_user!
-  before_action
 
   def create
     vote          = Vote.new vote_params

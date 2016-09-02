@@ -1,0 +1,208 @@
+<html>
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+    <style>
+      @keyframes drive {
+        0%   { left: 0; bottom: 0; }
+        50%  { left: 0; bottom: 200px; transform: rotate(750000deg);}
+        100% { left: 200px; bottom: 200px;}
+        /*100% { left: 0px; bottom: 0px;}*/
+      }
+      #rocket {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 50px;
+        /*animation: drive 5s;*/
+        animation-fill-mode: forwards;
+        /*transition: left 3s, width 4s;*/
+      }
+
+
+      #rocket.big {
+        width: 100px;
+      }
+
+      #rocket.shifted {
+        transition: width 4s;
+        left: 100px;
+      }
+
+      .red-border {
+        border-color: red;
+      }
+
+      .position-1 {
+        top: 100px;
+        left: 100px;
+      }
+
+      ul {
+        display: block;
+        padding-left: 0;
+        list-style: none;
+        margin-right: 10px;
+        border: 1px dashed #666;
+        min-height: 100px;
+      }
+
+      li {
+        border: 2px solid #666;
+        width: 50px;
+        padding: 10px;
+        text-align: center;
+        margin-top: 5px;
+        background-color: #2980b9;
+        color: white;
+        font-size: 20px;
+        z-index: 10;
+      }
+
+
+
+      /* emulating fadeIn using just css */
+        /*li {
+          opacity: 0;
+          transition: opacity 0.5s;
+        }
+
+        li.active {
+          opacity: 1;
+        }*/
+
+      /* Your Styles Here */
+
+    </style>
+
+    <script>
+
+      $(document).ready(function(){
+        $("#list-1, #list-2").sortable({connectWith: ".sortable"}).disableSelection();
+        $("#button-1").on("click", function(){
+          $("#rocket").css("animation", "drive 5s");
+        });
+        
+        $(document).keydown(function(e){
+          e.preventDefault();
+          console.log(e.keyCode)
+        })
+
+        $(document).keydown(function(e){
+          e.preventDefault();
+          var keyCode = e.keyCode;
+          var speed = 30;
+
+          if(keyCode === 37) {
+            var x = parseInt($("#rocket").css("left"));
+            $("#rocket").css("left", x -= speed);
+          }
+          if(keyCode === 38) {
+            var x = parseInt($("#rocket").css("bottom"));
+            $("#rocket").css("bottom", x += speed);
+          }
+          if(keyCode === 39) {
+            var x = parseInt($("#rocket").css("left"));
+            $("#rocket").css("left", x += speed);
+          }
+          if(keyCode === 40) {
+            var x = parseInt($("#rocket").css("bottom"));
+            $("#rocket").css("bottom", x -= speed);
+          }
+        });
+
+      });
+
+      // Solution 1
+      // $(document).ready(function(){
+      //   $("#button-1").on("click", function(){
+      //     // $("#rocket").toggleClass("big");
+      //     var size = parseInt($("#rocket").css("width"));
+      //     if(size < 100) {
+      //       $("#rocket").css("width", (size * 2) + "px");
+      //     } else {
+      //       $("#rocket").css("width", (size / 2) + "px");
+      //     }
+      //   });
+      //   $("#button-2").on("click", function(){
+      //     var left = parseInt($("#rocket").css("left"));
+      //     if(left < 100) {
+      //       $("#rocket").css("left",  "100px");
+      //     } else {
+      //       $("#rocket").css("left", "0px");
+      //     }
+      //   });
+      // });
+
+
+    </script>
+
+
+
+
+
+
+    <script>
+
+      $(document).ready(function() {
+
+        // $('.sortable').sortable({connectWith: '.sortable', axis: 'y'});
+
+        // $('#button-1').click(function() {
+        //   $('#rocket').toggleClass('big');
+        // });
+
+        // $('#list-item-1').slideUp(1000, function() {
+        //   $('#list-item-2').slideUp(1000, function() {
+        //     $('#list-item-3').slideUp(1000);
+        //   });
+        // });
+
+        // var rocket = $('#rocket');
+
+        // var speed = 10;
+
+        // var up = function() {
+        //   var oldY = parseInt(rocket.css('bottom'));
+        //   var newY = oldY + speed;
+        //   speed = speed - 0.2;
+
+        //   if (speed <= 0) {
+        //     speed = 0;
+        //   }
+
+        //   rocket.css('bottom', newY);
+        // };
+
+        // setInterval(up, 33);
+
+      });
+    </script>
+
+  </head>
+
+  <body>
+
+    <ul id="list-1" class="sortable">
+      <li id="list-item-1">1</li>
+      <li id="list-item-2">2</li>
+      <li id="list-item-3">3</li>
+      <li id="list-item-4">4</li>
+    </ul>
+
+    <ul id="list-2" class="sortable">
+      <li id="list-item-5">5</li>
+      <li id="list-item-6">6</li>
+      <li id="list-item-7">7</li>
+      <li id="list-item-8">8</li>
+    </ul>
+
+    <button id='button-1'>Button 1</button>
+    <button id='button-2'>Button 2</button>
+
+    <img id="rocket" src="rocket.png"/>
+
+  </body>
+
+</html>

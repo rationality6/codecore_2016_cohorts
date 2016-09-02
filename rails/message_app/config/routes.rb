@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   resources :messages do
     resources :comments, only: [:create, :destroy, :show, :edit, :update]
+    resources :likes, only: [:create, :destroy]
     # resources :feedbacks
   end
 

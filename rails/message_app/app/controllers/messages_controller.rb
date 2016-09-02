@@ -1,4 +1,5 @@
 class MessagesController < ApplicationController
+  # load_and_authorize_resource
   before_action :authenticate_user!, except: [:index, :show]
   before_action :find_message, only: [:destroy, :show, :edit, :update]
 
@@ -8,6 +9,7 @@ class MessagesController < ApplicationController
 
   def show
     @comments = Comment.new
+    @comment = Comment.all
   end
 
   def new
@@ -39,6 +41,12 @@ class MessagesController < ApplicationController
     @message.destroy
     redirect_to root_path
   end
+
+  def like_for(user)
+    Like.find_by_user_id user.id
+  end
+  helper_method :like_for
+
 
   private
 

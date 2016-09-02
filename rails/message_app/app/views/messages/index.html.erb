@@ -6,7 +6,7 @@
         <%= link_to message.content, message_path(message) %>
       </p>
       <p class="time"><%= message.created_at %></p>
-      <p><%= message.user_id %></p>
+      <p><%= message.user.full_name %></p>
       <%= link_to "Update", edit_message_path(message) %>
       <%= link_to "Delete", message,method: :delete,data:{confirm:"Are you sure?"} %>
     </div>

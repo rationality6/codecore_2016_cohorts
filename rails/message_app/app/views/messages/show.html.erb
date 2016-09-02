@@ -2,13 +2,24 @@
   <%= @message.content %>
   <%= @message.user_id %>
   <%= @message.created_at %>
+  <%= @message.user.full_name %>
+  <div>
+    <%= link_to "Like", message_likes_path(@message),method: :post %>
+    <% byebug %>
+    <%= link_to "Unlike", message_like_path(@message, @message.like_for(current_user)),method: :delete %>
+  </div>
+
 </div>
 <div>
+  <%# byebug %>
+  <% if can? :update, @message %>
+
   <%= link_to "Update", edit_message_path(@message) %>
 
   <%= link_to "Delete", message_path(@message),
                         method: :delete,
                         data: {confirm: "Are you sure?"} %>
+  <% end %>
 </div>
 
 <%= render 'message',comment: @comments,message: @message %>
@@ -16,6 +27,8 @@
 <% @message.comments.each do |c| %>
 <div>
   <%= c.id %>
+
+  <%= c.user.full_name %>
   <%= link_to c.body, message_comment_path(@message,c) %>
 
   <%= link_to "Edit", edit_message_comment_path(@message,c) %>
