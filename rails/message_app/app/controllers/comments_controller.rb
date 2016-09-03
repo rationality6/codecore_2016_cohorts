@@ -32,18 +32,27 @@ class CommentsController < ApplicationController
     @message = Message.find params[:message_id]
     @comment = @message.comments.new comment_params
     @comment.user = current_user
-    if @comment.save
-      redirect_to message_path(@message), notice: 'Answer created'
-    else
-      render '/questions/show'
+
+    respond_to do |format|
+      if @comment.save
+        format.html { redirect_to message_path(@message), notice: 'Answer created' }
+        format.js { render :create_success }
+      else
+        format.html { render '/questions/show' }
+        format.js { render :create_failure }
+      end
     end
   end
 
   def destroy
     m = Message.find params[:message_id]
     c = Comment.find params[:id]
+    @comment = Comment.find params[:id]
     c.destroy
-    redirect_to message_path(m), notice: 'deleted'
+    respond_to do |format|
+      format.html { redirect_to message_path(m), notice: 'deleted' }
+      format.js { render }
+    end
   end
 
   private

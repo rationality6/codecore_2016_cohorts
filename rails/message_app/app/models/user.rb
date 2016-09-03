@@ -2,6 +2,7 @@ class User < ApplicationRecord
   has_secure_password
 
   validates :email, presence: true, uniqueness: true, format: /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
+  validates :last_name, presence: true
 
   has_many :messages, dependent: :destroy
   has_many :comments, dependent: :destroy
@@ -14,5 +15,4 @@ class User < ApplicationRecord
   end
 
   private
-
 end

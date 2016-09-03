@@ -3,11 +3,10 @@
   <%= @message.user_id %>
   <%= @message.created_at %>
   <%= @message.user.full_name %>
-  <div>
-    <%= link_to "Like", message_likes_path(@message),method: :post %>
-    <% byebug %>
-    <%= link_to "Unlike", message_like_path(@message, @message.like_for(current_user)),method: :delete %>
-  </div>
+
+  <!-- <div id='dom_id(@user_like)' class="like"> -->
+   <%= render partial: 'likes/like' %>
+  <!-- </div> -->
 
 </div>
 <div>
@@ -22,19 +21,12 @@
   <% end %>
 </div>
 
-<%= render 'message',comment: @comments,message: @message %>
+<%= render 'message_input',comment: @comments,message: @message %>
 
-<% @message.comments.each do |c| %>
-<div>
-  <%= c.id %>
+<!-- comments -->
 
-  <%= c.user.full_name %>
-  <%= link_to c.body, message_comment_path(@message,c) %>
-
-  <%= link_to "Edit", edit_message_comment_path(@message,c) %>
-
-  <%= link_to "Del", message_comment_path(@message,c),
-  method: :delete,
-  data: {confirm: "Are you sure?"}%>
+<div id='comments'>
+  <% @message.comments.each do |comment| %>
+  <%= render '/comments/comment',comment9: comment %>
+  <% end %>
 </div>
-<% end %>

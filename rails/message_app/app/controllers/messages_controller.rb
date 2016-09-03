@@ -30,10 +30,14 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(message_params)
     @message.user = current_user
-    if @message.save
-      redirect_to '/'
-    else
-      render 'new'
+    respond_to do |format|
+      if @message.save
+        format.html { redirect_to '/', notice: 'Answer created successfully!' }
+        format.js {render :create_success}
+          else
+        format.html {render 'new'}
+        format.js {render :create_failure}
+      end
     end
   end
 
@@ -41,12 +45,6 @@ class MessagesController < ApplicationController
     @message.destroy
     redirect_to root_path
   end
-
-  def like_for(user)
-    Like.find_by_user_id user.id
-  end
-  helper_method :like_for
-
 
   private
 
