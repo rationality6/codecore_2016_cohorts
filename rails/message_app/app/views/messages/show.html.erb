@@ -5,8 +5,11 @@
   <%= @message.user.full_name %>
 
   <!-- <div id='dom_id(@user_like)' class="like"> -->
-   <%= render partial: 'likes/like' %>
+   <!-- <%= render partial: 'likes/like' %> -->
   <!-- </div> -->
+  <div id='like'>
+    <%= render "likes/like" %>
+  </div>
 
 </div>
 <div>

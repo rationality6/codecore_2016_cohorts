@@ -14,6 +14,5 @@ class Message < ApplicationRecord
   def liked_by?(user)
     likes.find_by_user_id user.id
   end
-  # helper_method :like_for
 
 end
