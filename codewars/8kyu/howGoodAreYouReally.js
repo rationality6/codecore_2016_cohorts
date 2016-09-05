@@ -22,5 +22,15 @@ function betterThanAverage(classPoints, yourPoints) {
   }) / classPoints.length;
 }
 
+for(){
+
+}
+
+var bta = function(data){
+  return data.reduce(function(a,b){
+    return a+b
+  })
+}
+console.log(bta());
 
 console.log(betterThanAverage([100, 40, 34, 57, 29, 72, 57, 88], 75));
