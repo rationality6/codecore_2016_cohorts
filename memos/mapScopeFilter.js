@@ -19,15 +19,14 @@ var otherScope = function() {
 }
 otherScope()
 
+var array0 = [12, 5, 8, 130, 44]
 
-var array0 = [12,5,8,130,44]
-
-function isBigEnough(value){
-  return value >=10;
+function isBigEnough(value) {
+  return value >= 10;
 }
 
-function sortDesc(a,b){
-  return (a-b)*-1
+function sortDesc(a, b) {
+  return (a - b) * -1
 };
 
 var filtered = array0.filter(isBigEnough).sort(sortDesc)
