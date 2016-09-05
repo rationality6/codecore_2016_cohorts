@@ -1,10 +1,9 @@
-case
-when name == "Bob"
-    puts "Hello Bob!"
-when age == 100
-    puts "Happy 100th birthday!"
-when occupation =~ /ruby/
-    puts "Hello, Rubyist!"
+if name == 'Bob'
+  puts 'Hello Bob!'
+elsif age == 100
+  puts 'Happy 100th birthday!'
+elsif occupation =~ /ruby/
+  puts 'Hello, Rubyist!'
 else
-    puts "I don't think I know you."
+  puts "I don't think I know you."
 end
