@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Flexbox Demo</title>
+    <style media="screen">
+      .parent {
+        border: 5px solid lightcoral;
+        display: flex;
+        /*flex-direction: row-reverse;*/
+        /*flex-wrap: wrap;*/
+        justify-content: space-around;
+        height: 200px;
+        /*align-items: flex-end;*/
+      }
+      .item {
+        margin: 5px;
+        background-color: deepskyblue;
+        color: white;
+        text-align: center;
+        font-weight: 600;
+        line-height: 50px;
+        width: 10%;
+      }
+      .item:nth-child(1) {
+        order: 4;
+        flex-grow: 1;
+        background-color: lightgreen;
+        align-self: flex-end;
+      }
+      .item:nth-child(2) {
+        order: 0;
+        flex-grow: 1;
+        align-self: flex-end;
+      }
+      .item:nth-child(3) {
+        order: 3;
+        flex-grow: 1;
+        align-self: center;
+      }
+      .item:nth-child(4) {
+        order: 2;
+        flex-shrink: 0;
+        align-self: flex-start;
+      }
+      .item:nth-child(5) {
+        order: 1;
+        flex-shrink: 0;
+        align-self: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="item">
+        1
+      </div>
+      <div class="item">
+        2
+      </div>
+      <div class="item">
+        3
+      </div>
+      <div class="item">
+        4
+      </div>
+      <div class="item">
+        5
+      </div>
+    </div>
+  </body>
+</html>

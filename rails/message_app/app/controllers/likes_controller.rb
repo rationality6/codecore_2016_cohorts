@@ -17,7 +17,6 @@ class LikesController < ApplicationController
 
   def destroy
     message = Message.find params[:message_id]
-    # byebug
     @like = current_user.likes.find params[:id]
     @like.destroy
     respond_to do |format|
