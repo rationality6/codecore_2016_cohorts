@@ -1,7 +1,0 @@
-<h1>All Products (<%= @products.length %>)</h1>
-
-<% @products.each do |product| %>
-  <%= link_to "#{product.name} - #{number_to_currency product.price}", 
-              product_path(product) %>
-  <hr>
-<% end %>

@@ -1,6 +1,0 @@
-<%= form_for @product do |p| %>
-<%= p.label "Choose a product" %>
-<%= p.collection_select :category_id, Category.all,:id,:name %>
-<%= p.text_field :name %>
-<%= p.submit %>
-<% end %>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Awesome answers client</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src='main.js'></script>
+  <script src='node_modules/mustache/mustache.js'></script>
+</head>
+
+<body>
+
+  <script id="question-listing-tmpl" type="x-tmpl-mustache">
+    <div class="question-listing">
+      <h2>{{title}}</h2>
+      <p>Views: {{view_count}}</p>
+      <p>Description: {{body}}</p>
+      <hr>
+    </div>
+  </script>
+
+  <div id='questions'></div>
+
+</body>
+
+</html>
