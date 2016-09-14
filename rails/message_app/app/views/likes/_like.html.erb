@@ -1,7 +1,0 @@
-<div id='like_destroy'>
-<% if user_signed_in? && @message.liked_by?(current_user) %>
-  <%= link_to "Dislike", message_like_path(@message, @message.like_for(current_user)) ,remote:true , method: :delete %>
-<% else %>
-  <%= link_to "Like", message_likes_path(@message),remote:true, method: :post   %>
-<% end %>
-</div>

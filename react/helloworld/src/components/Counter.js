@@ -44,6 +44,7 @@ Counter.propTypes = propTypes;
 Counter.defaultProps = defaultProps;
 
 const mapStateToProps = (state) => {
+<<<<<<< HEAD
     return {number: state.counter.number, color: state.ui.color};
 }
 
