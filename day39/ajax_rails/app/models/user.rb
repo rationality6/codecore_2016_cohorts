@@ -20,6 +20,8 @@ class User < ApplicationRecord
 
   after_initialize :set_defaults
 
+
+
   has_many :questions, dependent: :nullify
 
   has_many :likes, dependent: :destroy
@@ -37,4 +39,12 @@ class User < ApplicationRecord
   def set_defaults
     self.admin ||= false
   end
+
+  def generate_api_key
+    loop do
+      self.api_key == SecureRandom.hex(32)
+      break unless User.find_by_api_key self.api_key
+    end
+  end
+
 end

@@ -1,4 +1,5 @@
 class Question < ApplicationRecord
+
   # this associates the question with answer in a one-to-many fashion
   # this will give us handy methods to easily created associated answers and
   # fetch associated answers as well. Note that it should be pluralized for
@@ -28,7 +29,7 @@ class Question < ApplicationRecord
 
   # :image refers to the field in the database that stores the file name
   mount_uploader :image, ImageUploader
-  
+
   # This validatse that the title/body combination is unique which means that
   # title doesn't have to be unique by itself, body doesn't have to be unique
   # by itself but the combination of the two must be unique.
@@ -75,6 +76,17 @@ class Question < ApplicationRecord
   #   "#{id}-#{title}".parameterize
   # end
 
+  delegate :first_name,:last_name, to: :user, prefix: true, allow_nil: true
+
+  #
+  # def user_first_name
+  #   user.first_name if user
+  # end
+  #
+  # def user_last_name
+  #   user.last_name if user
+  # end
+
   private
 
   def capitalize_title
@@ -90,4 +102,10 @@ class Question < ApplicationRecord
   def set_defaults
     self.view_count ||= 0
   end
+
+  def authenticate_api_user
+    user = User.find_by_api_key params[:api_key]
+    head :unauthorized unless user
+  end
+
 end
