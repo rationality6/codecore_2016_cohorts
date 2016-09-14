@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Awesome answers client</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src='main.js'></script>
+  <script src='node_modules/mustache/mustache.js'></script>
+</head>
+
+<body>
+
+  <script id="product-listing-tmpl" type="x-tmpl-mustache">
+    <div class="product-listing" data-id={{id}}
+      <h2 id='title'>{{title}}</h2>
+      <p>Description: {{description}}</p>
+      <p>price: {{price}}</p>
+      <hr>
+    </div>
+  </script>
+
+  <script id="product-show-tmpl" type="x-tmpl-mustache">
+    <div class="product-listing">
+      <h2>{{title}}</h2>
+      <p>Description: {{description}}</p>
+      <p>price: {{price}}</p>
+      <hr>
+    </div>
+    <button id='back'>Back</button>
+  </script>
+
+  <div id='products'></div>
+
+</body>
+
+</html>
