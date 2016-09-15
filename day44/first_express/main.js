@@ -1,26 +1,28 @@
 var express = require('express');
 var app = express();
 
+var user = require('./routes/user');
+var morgan = require('morgan');
+var bodyParser = require('body-parser');
+
+// var myLogger = function(req,res,next){
+//     console.log(req.url);
+//     next();
+// };
+
+// app.use(myLogger)
+
+app.use(morgan('dev'));
+app.use(bodyParser.json());
+app.use('/' express.static('public'));
+
+
 app.get('/', function(req, res) {
     res.send('Hello world');
 })
 
-app.get('/user/:id',function(req,res){
-    res.send('Received a GET request, param:' + req.params.id);
-})
-
-app.post('/user',function(req,res){
-    res.json({ success: true })
-});
-
-app.put('/user', function(req,res){
-    res.status(400).json({message: 'Hey, you. Bad Request!'})
-})
-
-app.delete('/user',fuction(req, res){
-    res.send('Received a DELETE request')
-})
+app.use('/user',user);
 
 app.listen(3000, function(){
     console.log("Example App is listening on port 3000");
-})
+});

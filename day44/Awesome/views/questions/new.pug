@@ -1,0 +1,18 @@
+extends ../layout
+
+
+block content
+  div.container
+    h1 New Question
+    h1= data
+    p= name
+
+  form(method='post',action='/questions')
+    .form-group
+      label(for='title') Title
+      input.form-control#title(name="title")
+
+    .form-group
+      label(for="body") Body
+      textarea.form-control#body(name='body')
+    input.btn.btn-primary(type="submit")
