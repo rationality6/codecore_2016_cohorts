@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+gem 'omniauth-twitter'
+gem 'twitter'
 
 gem 'active_model_serializers', '~> 0.10.0'
 gem "fog-aws"
@@ -75,6 +77,8 @@ group :development do
   gem "rails-erd"
 
   gem "letter_opener"
+  gem 'pry'
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

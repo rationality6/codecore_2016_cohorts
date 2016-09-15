@@ -2,7 +2,7 @@ import * as types from '../actions/ActionTypes';
 
 const initialState = {
     number: 0,
-    dummy: 'dumbdumb',
+    title: 'dumbdumb hello world',
     dumbObject: {
         d: 0,
         u: 1,
@@ -27,6 +27,13 @@ export default function counter(state = initialState, action) {
                 ...state,
                 number: state.number - 1
             };
+
+        case types.TEXT_CHANGE:
+            return {
+                ...state,
+                title: action.title
+            };
+
         default:
             return state;
     }

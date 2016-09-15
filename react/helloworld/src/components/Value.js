@@ -1,4 +1,5 @@
 import React, {Component, PropTypes} from 'react';
+
 const propTypes = {
     number: PropTypes.number
 };
@@ -6,13 +7,12 @@ const defaultProps = {
     number: -1
 };
 class Value extends Component {
-    constructor(props) {
-        super(props);
-    }
     render() {
         return (
             <div>
                 <h1>{this.props.number}</h1>
+                <h1>{this.props.title}</h1>
+                <h1>{this.props.u}</h1>
             </div>
         );
     }

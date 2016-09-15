@@ -1,19 +1,17 @@
-import React, {Component, PropTypes} from 'react';
-import Counter from './Counter'
+import React, {Component} from 'react';
+import Counter from '../containers/Counter'
+import TextInput from '../containers/TextInput.js'
 
 const propTypes = {};
 
 const defaultProps = {};
 
 class App extends Component {
-    constructor(props) {
-        super(props);
-
-    }
     render() {
         return (
             <div>
                 <Counter/>
+                <TextInput/>
             </div>
         );
     }
