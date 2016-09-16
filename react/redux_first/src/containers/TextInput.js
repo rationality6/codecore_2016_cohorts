@@ -1,10 +1,7 @@
-import React, {Component, PropTypes} from 'react';
+import React, {Component} from 'react';
 
 import {connect} from 'react-redux';
 import * as actions from '../actions'
-
-const propTypes = {};
-const defaultProps = {};
 
 class TextButton extends Component {
     constructor(props) {
@@ -18,10 +15,7 @@ class TextButton extends Component {
         // this.props.updateTextOnList(event.target.input.value)
     }
 
-    updateTextInput = () => {}
-
     render() {
-        console.log(this.props)
         return (
             <div>
                 <br></br>
@@ -31,8 +25,6 @@ class TextButton extends Component {
         );
     }
 }
-TextButton.propTypes = propTypes;
-TextButton.defaultProps = defaultProps;
 
 const mapStateToProps = (state) => {
     console.log('state tree',state)
