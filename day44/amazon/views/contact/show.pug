@@ -1,0 +1,15 @@
+extends ../layout
+
+block content
+
+  h1= contact.title
+  p= contact.body
+  form(method='post',action='/contact/' + contact._id + "?_method=delete")
+    input.btn.btn-danger(type='submit',value='Delete')
+  h2 Answers
+  form(method="post", action="/contact/" + contact._id + "/answers")
+    .form-group
+      textarea.form-control(name="body")
+    input.btn.btn-primary(type="submit" value="Submit Answer")
+  each answer in contact.answers
+    .well= answer.body

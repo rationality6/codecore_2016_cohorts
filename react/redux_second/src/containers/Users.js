@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+
 const propTypes = {
 
 };
@@ -11,10 +12,14 @@ class Users extends Component {
   }
   render() {
     return(
-      <div>Users</div>
+      <div>
+          <input></input>
+          <input></input>
+      </div>
     );
   }
 }
 Users.propTypes = propTypes;
 Users.defaultProps = defaultProps;
+
 export default Users;

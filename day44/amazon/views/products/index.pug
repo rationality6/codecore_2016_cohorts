@@ -1,0 +1,10 @@
+extends ../layout
+
+block content
+    h1 products#Index
+
+    each product in products
+        a(href='/products/'+product.id)
+            h3= product.title
+        h4= product.body
+        h4= product.price

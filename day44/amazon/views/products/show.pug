@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+  h1 products#show
+
+  h2= product.title
+  h2= product.description
+  h2= product.price
+
+  form(method="post",action="/products/" + product.id + "?_method=delete")
+    input.btn.btn-primary(type='submit',value='Del')
+
+  form(method="patch",action="/products/" + product.id + "?_method=update")
+    input.btn.btn-primary(type='submit',value='Edit')

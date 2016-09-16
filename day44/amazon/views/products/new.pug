@@ -1,0 +1,21 @@
+extends ../layout
+
+block content
+  h1 Products
+
+  form#summit(method='post',action='/products')
+    .form-group(class=errors.title ? 'has-error' : "")
+      label(for='title') Title
+      input.form-control#title(name="title")
+      - if(errors.title)
+        .help-block= errors.title
+
+    .form-group
+      label(for="description") Description
+      input.form-control#description(name='description')
+
+    .form-group
+      label(for="price") Price
+      input.form-control#price(name='price')
+
+    input.btn.btn-primary(type="submit")
