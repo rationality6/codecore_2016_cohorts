@@ -10,19 +10,18 @@ var bodyParser = require('body-parser');
 //     next();
 // };
 
-// app.use(myLogger)
+// app.use(myLogger);
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());
-app.use('/' express.static('public'));
-
+app.use('/', express.static('public'));
 
 app.get('/', function(req, res) {
     res.send('Hello world');
 })
 
-app.use('/user',user);
+app.use('/user', user);
 
-app.listen(3000, function(){
+app.listen(3000, function() {
     console.log("Example App is listening on port 3000");
 });

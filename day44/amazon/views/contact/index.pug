@@ -1,0 +1,25 @@
+extends ../layout
+
+block content
+  div
+    a(href='/') Home
+    h1 Contact
+
+  form#summit(method='post',action='/contact')
+    .form-group
+      label(for='name') Name
+      input.form-control#name(name="name")
+
+    .form-group
+      label(for="contact") Contact
+      input.form-control#contact(name='contact')
+
+    .form-group
+      select.form-control
+        option(value=1) Sales
+        option(value=2) Marketing
+        option(value=3) Technical
+
+    input.btn.btn-primary(type="submit")
+
+    div#datas
