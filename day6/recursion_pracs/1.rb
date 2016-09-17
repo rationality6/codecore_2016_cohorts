@@ -6,7 +6,7 @@ def sum(n)
     end
 end
 
-p sum(6)
+p sum(5)
 
 
 
@@ -21,6 +21,7 @@ end
 
 puts n_to_fifty((1..10).to_a)
 
+
 def factorial(n)
     if n.empty?
         1
@@ -30,6 +31,7 @@ def factorial(n)
 end
 
 puts factorial((1..10).to_a)
+
 
 # def squares(array)
 #     if array.empty?
