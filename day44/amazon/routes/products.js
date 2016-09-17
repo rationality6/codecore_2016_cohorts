@@ -49,8 +49,33 @@ router.delete("/:id",function(req,res){
     })
 })
 
+router.get('/:id/edit',function(req,res){
+    Products.findOne({_id:req.params.id},function(err,product){
+        if(err){
+            next();
+        }else{
+            res.render("products/edit",{product:product,errors:{}})
+        }
+    })
+})
+
 router.patch('/:id',function(req,res){
-    console.log('foo');
+    Products.findOne({_id:req.params.id},function(err,product){
+        if(err){
+            next();
+        }else{
+            product.title = req.body.title,
+            product.description = req.body.description,
+            product.price = req.body.price,
+            product.save(function(err){
+                if(err){
+                    next()
+                }else{
+                    res.redirect("/products/" + product._id)
+                }
+            })
+        }
+    })
 })
 
 module.exports = router;

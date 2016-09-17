@@ -10,5 +10,5 @@ block content
   form(method="post",action="/products/" + product.id + "?_method=delete")
     input.btn.btn-primary(type='submit',value='Del')
 
-  form(method="patch",action="/products/" + product.id + "?_method=update")
-    input.btn.btn-primary(type='submit',value='Edit')
+  a(href='/products/'+product.id+'/edit')
+    button.btn.btn-primary Edit

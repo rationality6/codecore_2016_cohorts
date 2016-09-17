@@ -1,0 +1,19 @@
+extends ../layout
+
+block content
+  form#summit(method='post',action='/products/'+product.id+"?_method=patch")
+    .form-group(class=errors.title ? 'has-error' : "")
+      label(for='title') Title
+      input.form-control#title(name="title",value=product.title)
+      - if(errors.title)
+        .help-block= errors.title
+
+    .form-group
+      label(for="description") Description
+      input.form-control#description(name='description',value=product.description)
+
+    .form-group
+      label(for="price") Price
+      input.form-control#price(name='price',value=product.price)
+
+    input.btn.btn-primary(type='submit')
