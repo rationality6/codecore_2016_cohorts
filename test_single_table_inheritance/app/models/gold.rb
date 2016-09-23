@@ -1,0 +1,2 @@
+class Gold < plan
+end
